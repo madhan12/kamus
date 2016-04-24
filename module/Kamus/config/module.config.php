@@ -66,6 +66,8 @@ return array(
         'not_found_template'       => 'error/404',
         'exception_template'       => 'error/index',
         'template_map' => array(
+        	'layout/layout'        => __DIR__ . '/../view/layout/layout.phtml',
+           
         //    'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
             'kamus/index/index' => __DIR__ . '/../view/kamus/index/index.phtml',
            
