@@ -1,5 +1,10 @@
 <?php
 return array(
+'module_layouts' => array(
+        'Admin' => 'layout/admin',
+        'Kamus' => 'layout/kamus'
+        ),
+	
 'router' => array(
         'routes' => array(
             'admin' => array(
@@ -44,11 +49,7 @@ return array(
         'not_found_template'       => 'error/404',
         'exception_template'       => 'error/index',
         'template_map' => array(
-        //	'layout/layout'        => __DIR__ . '/../view/layout/layout.phtml',
-           
-        //    'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-       //     'kamus/index/index' => __DIR__ . '/../view/kamus/index/login.phtml',
-           
+           'layout/admin'           => __DIR__ . '/../view/layout/layout.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',

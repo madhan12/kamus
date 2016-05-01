@@ -9,9 +9,11 @@ return array(
     'modules' => array(
         'Application',
         'ZfcUser',
+        'EdpModuleLayouts',
         'Kamus',
         'Admin',
     ),
+   
     'module_listener_options' => array(
         'module_paths' => array(
             './module',
