@@ -82,7 +82,10 @@ return array(
         'not_found_template'       => 'error/404',
         'exception_template'       => 'error/index',
         'template_map' => array(
-           'layout/admin'           => __DIR__ . '/../view/layout/layout.phtml',
+ 		   'layout/admin'           => __DIR__ . '/../view/layout/layout.phtml',
+           'layout/layout' 			=> __DIR__ . '/../view/layout/application.phtml',
+         
+        
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
