@@ -156,7 +156,7 @@ $settings = array(
      *                  If callback used, it will receive the identity as the param
      *
      */
-    'login_redirect_route' => 'kamus',
+    'login_redirect_route' => 'admin',
 
     /**
      * Logout Redirect Route
