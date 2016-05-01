@@ -46,6 +46,22 @@ return array(
                         ),
                     ),
 
+
+ 					'komentar' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/komentar[/:action]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                            	 'controller'    => 'Komentar',
+                        		 'action'        => 'index',
+                            ),
+                        ),
+                    ),
+
                 ),
             ),
         ),
@@ -54,7 +70,8 @@ return array(
 	'controllers' => array(
         'invokables' => array(
             'Admin\Controller\Index' => "Admin\Controller\IndexController",
-            'Admin\Controller\Istilah' => "Admin\Controller\IstilahController"
+            'Admin\Controller\Istilah' => "Admin\Controller\IstilahController",
+            'Admin\Controller\Komentar' => "Admin\Controller\KomentarController"
         ),
     ),
     
