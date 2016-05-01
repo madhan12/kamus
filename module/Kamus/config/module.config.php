@@ -17,10 +17,20 @@ return array(
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
+            'home' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/',
+                    'defaults' => array(
+                        'controller' => 'Kamus\Controller\Index',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
             'kamus' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/kamus',
+                    'route'    => '/',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Kamus\Controller',
                         'controller'    => 'Index',
@@ -69,7 +79,7 @@ return array(
         	'layout/layout'        => __DIR__ . '/../view/layout/layout.phtml',
            
         //    'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            'kamus/index/index' => __DIR__ . '/../view/kamus/index/index.phtml',
+       //     'kamus/index/index' => __DIR__ . '/../view/kamus/index/login.phtml',
            
         ),
         'template_path_stack' => array(

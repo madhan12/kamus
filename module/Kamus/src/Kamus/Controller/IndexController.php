@@ -10,10 +10,13 @@ class IndexController extends AbstractActionController
 
     public function indexAction()
     {
-    	if (!$this->zfcUserAuthentication()->hasIdentity()) {
-            return $this->redirect()->toRoute("zfcuser/login");
-        }
+    	// if (!$this->zfcUserAuthentication()->hasIdentity()) {
+     //        return $this->redirect()->toRoute("zfcuser/login");
+     //    }
         return new ViewModel();
+    }
+    public function loginAction(){
+    	
     }
 
 
