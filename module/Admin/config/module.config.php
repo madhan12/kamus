@@ -4,7 +4,7 @@ return array(
         'Admin' => 'layout/admin',
         'Kamus' => 'layout/kamus'
         ),
-	
+
 'router' => array(
         'routes' => array(
             'admin' => array(
@@ -22,7 +22,7 @@ return array(
                     'default' => array(
                         'type'    => 'Segment',
                         'options' => array(
-                            'route'    => '/admin[/:controller[/:action]]',
+                            'route'    => '[/:controller[/:action]]',
                             'constraints' => array(
                                 'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
                                 'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
@@ -31,6 +31,21 @@ return array(
                             ),
                         ),
                     ),
+ 					'istilah' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/istilah[/:action]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                            	 'controller'    => 'Istilah',
+                        		 'action'        => 'index',
+                            ),
+                        ),
+                    ),
+
                 ),
             ),
         ),
@@ -38,7 +53,8 @@ return array(
 	
 	'controllers' => array(
         'invokables' => array(
-            'Admin\Controller\Index' => "Admin\Controller\IndexController"
+            'Admin\Controller\Index' => "Admin\Controller\IndexController",
+            'Admin\Controller\Istilah' => "Admin\Controller\IstilahController"
         ),
     ),
     
