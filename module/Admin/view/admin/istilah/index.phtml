@@ -15,33 +15,27 @@
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"><a href="#">Home</a></li>
   </ul>
-
+<?php foreach ($this->form->getMessages() as $field => $message): ?>
+	<b><?php echo $field . ' ' . $message['isEmpty'] ?></b>
+<?php endforeach ?>
   	<form  action="/admin/istilah" method="POST">
 						
 						<table class="table table-bordered table-hover table-striped tablesorter" align="center">
 						
 						<tr>
 						<td>Istilah</td>
-						<td><input type="text" name="istilah" size="160" placeholder="isikan Istilah . . ." required autocomplete="off"></td>
+						<td><input type="text" name="istilah" size="160" placeholder="isikan Istilah . . ." autocomplete="off"></td>
 						</tr>
-						
+					
 						<tr>
 						<td>Konteks</td>
-						<td><input type="tex" name="arti" id="arti" size="110" placeholder="isikan harga-buku" required>
+						<td><input type="tex" name="arti" id="arti" size="110" placeholder="isikan harga-buku">
 						<script type="text/javascript">CKEDITOR.replace('#arti');</script></td>
 						</tr>
-						
-					
-						
 						<tr>
 						<td colspan="2" align="right"><button type="submit" class="btn btn-md btn-warning" name="tambah"><b>Tambah Istilah </b><i class="fa fa-arrow-circle-right"></i></button></td>
 						</tr>
-
-						
 						</table>
 						</form>
-
-
-
 </body>
 </html>

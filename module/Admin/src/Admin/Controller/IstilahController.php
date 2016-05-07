@@ -29,15 +29,10 @@ class IstilahController extends AbstractActionController
                 $this->getIstilahTable()->saveIstilah($istilah);
                  // Redirect to list of albums
                 return $this->redirect()->toRoute('admin/istilah');
-             } else {
-
-             	print_r($form->getMessages());
-             }
-
-             
+             } 
          }
 
-         //return array('form' => $form);
+        return array('form' => $form);
     }
 
     public function addAction()

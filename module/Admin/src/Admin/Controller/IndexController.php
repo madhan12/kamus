@@ -15,8 +15,23 @@ class IndexController extends AbstractActionController
         }
      
 
-        return new ViewModel();
+        return new ViewModel(array(
+        	'istilah' => $this->getIstilahTable()->fetchAll()
+    	));
+    	
     }
+
+
+    public function getIstilahTable()
+    {
+         if (!$this->istilahTable) {
+             $sm = $this->getServiceLocator();
+             $this->istilahTable = $sm->get('Kamus\Model\IstilahTable');
+         }
+         return $this->istilahTable;
+    }
+
+
 
 
 }

@@ -22,132 +22,19 @@
 				</tr>
 			</thead>
 			<tbody>
+			<?php $no=0; ?>
+                <?php foreach ($this->istilah as $istilah): ?>
+
+
 				<tr>				
-					<td>Andi</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
+					<td><?php echo ++$no ?></td>
+					<td><?php echo $istilah->id ?></td>
+					<td><?php echo $this->escapeHtml($istilah->istilah) ?></td>
+					<td></td>
+					<td><?php echo $istilah->hit ?></td>
+					
 				</tr>
-				<tr>				
-					<td>Andi</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
-				</tr>
-				<tr>				
-					<td>Andi</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
-				</tr>
-				<tr>				
-					<td>Andi</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
-				</tr>
-				<tr>				
-					<td>Andi</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
-				</tr>
-				<tr>				
-					<td>Andi</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
-				</tr>
-				<tr>				
-					<td>Andi</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
-				</tr>
-				<tr>				
-					<td>Andi</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
-				</tr>
-				<tr>				
-					<td>madhan</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
-				</tr>
-				<tr>				
-					<td>Andi</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
-				</tr>
-				<tr>				
-					<td>Andi</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
-				</tr>
-				<tr>				
-					<td>Andi</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
-				</tr>
-				<tr>				
-					<td>Andi</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
-				</tr>
-				<tr>				
-					<td>Andi</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
-				</tr>
-				<tr>				
-					<td>Andi</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
-				</tr>
-				<tr>				
-					<td>Andi</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
-				</tr>
-				<tr>				
-					<td>Andi</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
-				</tr>
-				<tr>				
-					<td>madhan</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
-				</tr>
+			    <?php endforeach ?>
 			</tbody>
 		</table>
 		</div>
