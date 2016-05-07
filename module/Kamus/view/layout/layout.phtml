@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <?php echo $this->headTitle('ZF2 '. $this->translate('Skeleton Application'))->setSeparator(' - ')->setAutoEscape(false) ?>
+        <?php echo $this->headTitle('::(KASTI)::')->setSeparator(' - ')->setAutoEscape(false) ?>
 
         <?php echo $this->headMeta()
             ->appendName('viewport', 'width=device-width, initial-scale=1.0')
@@ -23,33 +23,267 @@
             ->prependFile($this->basePath('js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
             ->prependFile($this->basePath('js/html5shiv.min.js'),   'text/javascript', array('conditional' => 'lt IE 9',))
         ; ?>
+        <style type="text/css">
+        * {
+            margin:0px;
+            padding:0px;
+        }
+        .form-group input[type="text"],
+        .form-group input['textarea'] {
+        font-size: 10px;
+        margin:0px;
+        padding:0px;
 
+        }
+        #abjad > a{
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+        #abjad {
+          margin-bottom: 0px;
+        }
+        #article{
+          overflow: scroll;
+          height: 612px;
+          width: 750px;
+        }
+        #istilah-terbaru > .col-md-4 {
+          margin-right: 20px;
+          width: 450px;
+        }
+
+
+        </style>
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="<?php echo $this->url('home') ?>">&nbsp;<?php echo $this->translate('Skeleton Application') ?></a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="<?php echo $this->url('home') ?>"></a></li>
-                        <li><a href="<?php echo $this->url('zfcuser/login') ?>">Login</a></li>
-                        <li><a href="<?php echo $this->url('zfcuser/logout') ?>">Logout</a></li>
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div>
-        </nav>
+      
+       <nav class="navbar navbar-inverse navbar-fixed-top">
+ <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="">KAMUS ISTILAH TEKNOLOGI INFORMASI (KASTI)</a>
+        </div>
+      
+</nav><!--Navbar layout-->
+
+<div class="container">
+         <div class="row">
+  
+
+
+  <div class="col-md-8" name="center">
+    <div class="panel panel-default">
+  <div class="panel-heading"><!--heading-->
+
+  <form class="form-inline">
+  <div class="form-group">
+  <input type="text" class="form-control" id="search" size="90" placeholder="Search">
+  </div>
+  <button type="submit" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-search"></span> Search</button>
+  </form>
+  </div><!--heading-->
+  
+  <div id="abjad" class="panel-body"><!--body-->
+    <a href="">0-9</a>
+    <a href="">A</a>
+    <a href="">B</a>
+    <a href="">C</a>
+    <a href="">D</a>
+    <a href="">E</a>
+    <a href="">F</a>
+    <a href="">G</a>
+    <a href="">H</a>
+    <a href="">I</a>
+    <a href="">J</a>
+    <a href="">K</a>
+    <a href="">L</a>
+    <a href="">M</a>
+    <a href="">N</a>
+    <a href="">O</a>
+    <a href="">P</a>
+    <a href="">Q</a>
+    <a href="">R</a>
+    <a href="">S</a>
+    <a href="">T</a>
+    <a href="">U</a>
+    <a href="">V</a>
+    <a href="">W</a>
+    <a href="">X</a>
+    <a href="">Y</a>
+    <a href="">Z</a>
+  </div><!--body-->
+</div>
+<div id="article">
+  <p>
+<br/>
+<p>Artikel pilihan sebelumnya: Adolf Hitler – Joehana – Lê Văn Duyệt
+Arsip – Artikel pilihan lainnya...
+</p>
+
+
+
+Peristiwa terkini
+Jamie Vardy pada tahun 2015
+Jamie Vardy
+Leicester City (foto pemain klub Jamie Vardy) menjuarai Liga Utama Inggris untuk pertama kalinya.
+Abu Sayyaf membebaskan 10 Warga Negara Indonesia dari 21 sandera dalam kasus pembajakan dan penyanderaan oleh kelompok tersebut.
+Pemerintah Kenya membakar tumpukan gading terbesar sebagai bagian dari penghentian perdagangan gading ilegal.
+Teodoro Obiang Nguema Mbasogo terpilih kembali sebagai Presiden Guinea Khatulistiwa.
+13 orang tewas setelah sebuah helikopter Super Puma jatuh dekat Kota Bergen, Norwegia.
+Sedang berlangsung: Wabah virus Zika
+Kematian terkini: Tuty Alawiyah – Harold Walter Kroto – Hilarius Moa Nurak
+
+Peristiwa terkini lainnya...
+
+
+
+
+
+Hari ini dalam sejarah
+6 Mei: Hari St George di Bulgaria
+
+{{{title}}}
+Zeppelin
+1937 - Zeppelin Jerman, Hindenburg, terbakar dan hancur sepenuhnya di New Jersey, menewaskan 36 orang.
+1941 - Joseph Stalin menjadi perdana menteri Rusia.
+1986 - Real Madrid memenangkan pertandingan akhir Piala UEFA di Berlin.
+2003 - Ateng, pelawak kawakan Indonesia meninggal dunia pada usia 61 tahun karena sakit tenggorokan.
+2007 - Nicolas Sarkozy memenangkan pemilihan presiden di Perancis.
+Tanggal lain: 
+<br/>
+<p>Artikel pilihan sebelumnya: Adolf Hitler – Joehana – Lê Văn Duyệt
+Arsip – Artikel pilihan lainnya...
+</p>
+
+
+
+Peristiwa terkini
+Jamie Vardy pada tahun 2015
+Jamie Vardy
+Leicester City (foto pemain klub Jamie Vardy) menjuarai Liga Utama Inggris untuk pertama kalinya.
+Abu Sayyaf membebaskan 10 Warga Negara Indonesia dari 21 sandera dalam kasus pembajakan dan penyanderaan oleh kelompok tersebut.
+Pemerintah Kenya membakar tumpukan gading terbesar sebagai bagian dari penghentian perdagangan gading ilegal.
+Teodoro Obiang Nguema Mbasogo terpilih kembali sebagai Presiden Guinea Khatulistiwa.
+13 orang tewas setelah sebuah helikopter Super Puma jatuh dekat Kota Bergen, Norwegia.
+Sedang berlangsung: Wabah virus Zika
+Kematian terkini: Tuty Alawiyah – Harold Walter Kroto – Hilarius Moa Nurak
+
+Peristiwa terkini lainnya...
+
+
+
+
+
+Hari ini dalam sejarah
+6 Mei: Hari St George di Bulgaria
+
+{{{title}}}
+Zeppelin
+1937 - Zeppelin Jerman, Hindenburg, terbakar dan hancur sepenuhnya di New Jersey, menewaskan 36 orang.
+1941 - Joseph Stalin menjadi perdana menteri Rusia.
+1986 - Real Madrid memenangkan pertandingan akhir Piala UEFA di Berlin.
+2003 - Ateng, pelawak kawakan Indonesia meninggal dunia pada usia 61 tahun karena sakit tenggorokan.
+2007 - Nicolas Sarkozy memenangkan pemilihan presiden di Perancis.
+Tanggal lain: 5 Mei – 6 Mei – 7 Mei
+   
+
+</div>
+  <div class="panel panel-success">
+  <div class="panel-heading"><span class="glyphicon glyphicon-home"></span> Jumlah Istilah</div>
+  <div class="panel-body">
+  <p align="center">Jumlah istilah </p>
+  <p align="center"> 12.580 </p>
+
+  </div>
+</div>
+
+
+
+      </div>
+
+      <div id="istilah-terbaru" class="col-md-4">
+      <div  class="list-group">
+  <a href="#" class="list-group-item active">
+    <span class="glyphicon glyphicon-star"> Istilah Terbaru</span>
+  </a>
+  <a href="#" class="list-group-item">Istilah-1</a>
+  <a href="#" class="list-group-item">Istilah-2</a>
+  <a href="#" class="list-group-item">Istilah-3</a>
+  <a href="#" class="list-group-item">Istilah-4</a>
+  <a href="#" class="list-group-item">Istilah-5</a>
+</div>
+
+ <div  class="list-group danger">
+  <a href="#" class="list-group-item active">
+    <span class="glyphicon glyphicon-star"> Istilah Terpopuler</span>
+  </a>
+  <a href="#" class="list-group-item">Istilah</a>
+  <a href="#" class="list-group-item">Istilah</a>
+  <a href="#" class="list-group-item">Istilah</a>
+  <a href="#" class="list-group-item">Istilah</a>
+  <a href="#" class="list-group-item">Istilah</a>
+</div>
+
+
+<div class="panel panel-info">
+  <div class="panel-heading"><span class="glyphicon glyphicon-pencil"></span> KOMENTAR</div>
+  <div class="panel-body">
+
+<form class="form-horizontal">
+
+ <input type="hidden" name="id" value="">
+  <table class="table table-bordered table-hover table-striped tablesorter" align="center">
+            <tr>
+            <td>
+  <textarea class="form-control" name="komentar" rows="8" placeholder="Isi Komentar Anda di sini tentang Website ini"></textarea>
+</td>
+            </tr>
+
+            <tr>
+            <td colspan="2" align="right"><button type="submit" class="btn btn-md btn-warning" name="tambah"><b>Kirim </b><i class="fa fa-arrow-circle-right"></i></button></td>
+            </tr>
+
+</table>
+</form>
+
+
+  </div>
+</div>
+
+
+
+
+
+ 
+
+      </div>
+
+
+
+ 
+</div>
+ <div class="col-md-8">
+      
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+         
         <div class="container">
             <?php echo $this->content; ?>
             <hr>
+
             <footer>
-                <p>&copy; 2005 - <?php echo date('Y') ?> by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
+                <p align="center">&copy; 2005 - <?php echo date('Y') ?> by Ramadhansyah Tanjung     <?php echo $this->translate('All rights reserved.') ?></p>
             </footer>
         </div> <!-- /container -->
         <?php echo $this->inlineScript() ?>
