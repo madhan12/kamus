@@ -5,15 +5,16 @@ namespace Kamus\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
+
 class IndexController extends AbstractActionController
 {
 	protected $istilahTable;
 
     public function indexAction()
     {
-       return new ViewModel();
+    	
     }
-    
+
     public function loginAction()
     {
     	
@@ -27,4 +28,6 @@ class IndexController extends AbstractActionController
          }
          return $this->istilahTable;
     }
+
+
 }

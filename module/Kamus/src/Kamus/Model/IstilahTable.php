@@ -33,11 +33,15 @@ namespace Kamus\Model;
      {
          $data = array(
             'istilah' => $istilah->istilah,
-            'arti' => $istilah->arti,
+            'arti' => htmlspecialchars($istilah->arti),
             'hit' => $istilah->hit,
             'tanggal' => $istilah->tanggal,
             'update' => $istilah->update,
          );
+
+         if (is_null($data['tanggal'])) {
+            $data['tanggal'] = date('Y-m-d H:i:s');
+         } 
 
          $id = (int) $istilah->id;
          if ($id == 0) {

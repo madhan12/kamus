@@ -16,34 +16,22 @@
   <li role="presentation" class="active"><a href="#">Home</a></li>
   </ul>
 
-  	<form  action="aksi-tambah-buku.php" method="POST" enctype="multipart/form-data">
+  	<form  action="/admin/istilah" method="POST">
 						
 						<table class="table table-bordered table-hover table-striped tablesorter" align="center">
-						<tr>
-						<td>Id</td>
-						<td><input type="text" name="kode_buku" size="160" placeholder="Id istilah . . ."required autocomplete="off"></td>
-						</tr>
 						
 						<tr>
 						<td>Istilah</td>
-						<td><input type="text" name="judul_buku" size="160" placeholder="isikan Istilah . . ." required autocomplete="off"></td>
+						<td><input type="text" name="istilah" size="160" placeholder="isikan Istilah . . ." required autocomplete="off"></td>
 						</tr>
 						
 						<tr>
 						<td>Konteks</td>
 						<td><input type="tex" name="arti" id="arti" size="110" placeholder="isikan harga-buku" required>
-						<script type="text/javascript">CKEDITOR.replace('arti');</script></td>
+						<script type="text/javascript">CKEDITOR.replace('#arti');</script></td>
 						</tr>
 						
-						<tr>
-						<td>Tanggal</td>
-						<td><input type="text"></input></td>
-						</tr>
-						
-						<tr>
-						<td>HIT</td>
-						<td><input type="text" name="keterangan" size="160" placeholder="Keterangan tentang Buku" required></td>
-						</tr>
+					
 						
 						<tr>
 						<td colspan="2" align="right"><button type="submit" class="btn btn-md btn-warning" name="tambah"><b>Tambah Istilah </b><i class="fa fa-arrow-circle-right"></i></button></td>
