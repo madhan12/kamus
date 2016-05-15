@@ -69,6 +69,18 @@ class IstilahTable
         return $statement->execute();
      }
 
+     public function getBySearch($search)
+     {
+        $search = strtolower($search);
+        $sql = new Sql\Sql($this->tableGateway->getAdapter());
+        $select = $sql->select();
+        $select->from($this->tableGateway->getTable());
+        $select->columns(array('*'))->where->like('istilah.istilah', '%' . $search . '%');
+        $selectString = $sql->buildSqlString($select);
+        $statement = $sql->prepareStatementForSqlObject($select);
+        return $statement->execute();
+     }
+
      public function deleteIstilah($id)
      {
          $this->tableGateway->delete(array('id' => (int) $id));

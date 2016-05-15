@@ -14,7 +14,15 @@ class IndexController extends AbstractActionController
     {
         $table = $this->getIstilahTable();
         $index = $this->params()->fromQuery('index'); //GET
-        $istilah = $table->getByIndex($index);
+        $search = $this->params()->fromQuery('search'); //GET
+
+        if ($index != null) {
+            $istilah = $table->getByIndex($index);
+        } elseif ($search != null) {
+            $istilah = $table->getBySearch($search);
+            
+        }
+
 // print_r($istilah->count())
         return new ViewModel(array(
             'istilah' => $istilah
