@@ -29,6 +29,16 @@ class IndexController extends AbstractActionController
         ));
     }
 
+    public function detailAction()
+    {
+        $id = $this->params()->fromRoute('id');
+        $istilah = $this->getIstilahTable()->getIstilah($id);
+
+        return new ViewModel(array(
+            'istilah' => $istilah
+        ));
+    }
+
     public function loginAction()
     {
     	
