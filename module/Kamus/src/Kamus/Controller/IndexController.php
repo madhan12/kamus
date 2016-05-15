@@ -12,7 +12,13 @@ class IndexController extends AbstractActionController
 
     public function indexAction()
     {
-    	
+        $table = $this->getIstilahTable();
+        $index = $this->params()->fromQuery('index'); //GET
+        $istilah = $table->getByIndex($index);
+// print_r($istilah->count())
+        return new ViewModel(array(
+            'istilah' => $istilah
+        ));
     }
 
     public function loginAction()

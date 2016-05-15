@@ -1,10 +1,12 @@
 <?php 
 namespace Kamus\Model;
 
- use Zend\Db\TableGateway\TableGateway;
+use Zend\Db\TableGateway\TableGateway;
+use Zend\Db\Sql;
+use Zend\Db\ResultSet\ResultSet;
 
- class IstilahTable
- {
+class IstilahTable 
+{
      protected $tableGateway;
 
      public function __construct(TableGateway $tableGateway)
@@ -53,6 +55,18 @@ namespace Kamus\Model;
                  throw new \Exception('Istilah id does not exist');
              }
          }
+     }
+
+     public function getByIndex($index)
+     {
+        $index = strtolower($index);
+        $sql = new Sql\Sql($this->tableGateway->getAdapter());
+        $select = $sql->select();
+        $select->from($this->tableGateway->getTable());
+        $select->columns(array('*'))->where->like('istilah.istilah', $index . '%');
+        $selectString = $sql->buildSqlString($select);
+        $statement = $sql->prepareStatementForSqlObject($select);
+        return $statement->execute();
      }
 
      public function deleteIstilah($id)

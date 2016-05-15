@@ -26,8 +26,8 @@ class Module
     }
 
     // Add this method:
-     public function getServiceConfig()
-     {
+    public function getServiceConfig()
+    {
          return array(
              'factories' => array(
                 'IstilahTableGateway' => function ($sm) {
