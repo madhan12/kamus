@@ -2,6 +2,7 @@
 namespace Kamus\Model;
 
 use Zend\Db\TableGateway\TableGateway;
+use Zend\Db\Sql\Select;
 use Zend\Db\Sql;
 use Zend\Db\ResultSet\ResultSet;
 
@@ -91,5 +92,15 @@ class IstilahTable
      {
         $istilah->hit += 1;
         $this->saveIstilah($istilah);
+     }
+
+     public function getLatest($limit)
+     {
+        $rowset = $this->tableGateway->select(function (Select $select) use ($limit) {
+            $select->columns(array('id','istilah'));
+            $select->order('tanggal DESC');
+            $select->limit($limit);
+        });
+        return $rowset;
      }
  }

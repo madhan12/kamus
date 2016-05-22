@@ -74,6 +74,11 @@ return array(
             'Kamus\Controller\Index' => "Kamus\Controller\IndexController"
         ),
     ),
+    'view_helpers' => array(
+        'invokables' => array(
+                'getLatestIstilah' => 'Kamus\View\Helper\LatestIstilah'
+            ),
+    ),
     'view_manager' => array(
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
