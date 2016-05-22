@@ -35,7 +35,7 @@ class IstilahTable
      {
          $data = array(
             'istilah' => $istilah->istilah,
-            'arti' => htmlspecialchars($istilah->arti),
+            'arti' => $istilah->arti,
             'hit' => $istilah->hit,
             'tanggal' => $istilah->tanggal,
             'update' => $istilah->update,
@@ -47,6 +47,7 @@ class IstilahTable
 
          $id = (int) $istilah->id;
          if ($id == 0) {
+             $data['arti'] = htmlspecialchars($data['arti']);
              $this->tableGateway->insert($data);
          } else {
              if ($this->getIstilah($id)) {
@@ -84,5 +85,11 @@ class IstilahTable
      public function deleteIstilah($id)
      {
          $this->tableGateway->delete(array('id' => (int) $id));
+     }
+
+     public function updateHit(Istilah $istilah)
+     {
+        $istilah->hit += 1;
+        $this->saveIstilah($istilah);
      }
  }

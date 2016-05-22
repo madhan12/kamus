@@ -23,9 +23,9 @@ return array(
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
             'home' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'type' => 'Segment',
                 'options' => array(
-                    'route'    => '/',
+                    'route'    => '/[:action[/:id]]',
                     'defaults' => array(
                         'controller' => 'Kamus\Controller\Index',
                         'action'     => 'index',

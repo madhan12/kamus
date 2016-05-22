@@ -19,11 +19,9 @@ class IndexController extends AbstractActionController
         if ($index != null) {
             $istilah = $table->getByIndex($index);
         } elseif ($search != null) {
-            $istilah = $table->getBySearch($search);
-            
+            $istilah = $table->getBySearch($search);       
         }
-
-// print_r($istilah->count())
+        
         return new ViewModel(array(
             'istilah' => $istilah
         ));
@@ -33,6 +31,8 @@ class IndexController extends AbstractActionController
     {
         $id = $this->params()->fromRoute('id');
         $istilah = $this->getIstilahTable()->getIstilah($id);
+
+        $this->getIstilahTable()->updateHit($istilah);
 
         return new ViewModel(array(
             'istilah' => $istilah

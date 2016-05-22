@@ -66,7 +66,6 @@ class Istilah
                          'name'    => 'StringLength',
                          'options' => array(
                              'encoding' => 'UTF-8',
-                              'max'      => 1000,
                          ),
                      ),
                  ),
