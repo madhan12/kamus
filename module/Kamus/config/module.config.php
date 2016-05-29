@@ -76,7 +76,9 @@ return array(
     ),
     'view_helpers' => array(
         'invokables' => array(
-                'getLatestIstilah' => 'Kamus\View\Helper\LatestIstilah'
+                'getLatestIstilah'  => 'Kamus\View\Helper\LatestIstilah',
+                'getIstilahPopuler' => 'Kamus\View\Helper\IstilahPopuler',
+                'getTotalIstilah'   => 'Kamus\View\Helper\TotalIstilah',
             ),
     ),
     'view_manager' => array(
