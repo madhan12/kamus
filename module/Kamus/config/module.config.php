@@ -32,6 +32,18 @@ return array(
                     ),
                 ),
             ),
+
+            'komentar' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route'    => '/komentar[/:action[/:id]]',
+                    'defaults' => array(
+                        'controller' => 'Kamus\Controller\Komentar',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+
             'kamus' => array(
                 'type'    => 'Literal',
                 'options' => array(
@@ -71,7 +83,9 @@ return array(
     
     'controllers' => array(
         'invokables' => array(
-            'Kamus\Controller\Index' => "Kamus\Controller\IndexController"
+            'Kamus\Controller\Index' => "Kamus\Controller\IndexController",
+            'Kamus\Controller\Komentar' => "Kamus\Controller\KomentarController"
+            
         ),
     ),
     'view_helpers' => array(
