@@ -35,6 +35,25 @@ class IstilahController extends AbstractActionController
         return array('form' => $form);
     }
 
+    public function hapusAction()
+    {
+        
+
+          $id = (int) $this->params()->fromRoute('id', 0);
+         if (!$id) {
+             return $this->redirect()->toRoute('admin');
+         }
+
+         $request = $this->getRequest();
+              
+        $this->getIstilahTable()->hapusIstilah($id);
+             
+
+             // Redirect to list of albums
+        return $this->redirect()->toRoute('admin');
+         
+    }
+
     public function getIstilahTable()
     {
          if (!$this->istilahTable) {
@@ -43,6 +62,7 @@ class IstilahController extends AbstractActionController
          }
          return $this->istilahTable;
     }
+
 
 
 

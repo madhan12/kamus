@@ -4,21 +4,44 @@ namespace Kamus\Model;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\Sql;
 use Zend\Db\ResultSet\ResultSet;
+use Zend\Paginator\Adapter\DbSelect;
+use Zend\Paginator\Paginator;
+
 
 class IstilahTable 
 {
      protected $tableGateway;
+     public $halaman = FALSE;
 
      public function __construct(TableGateway $tableGateway)
     {
          $this->tableGateway = $tableGateway;
-     }
+    }
 
-     public function fetchAll()
-     {
+    public function fetchAll()
+    {
+         // if ($halaman) {
+         //     // create a new Select object for the table album
+         //     $select = new Sql\Select('istilah');
+         //     // create a new result set based on the Album entity
+         //     $resultSetPrototype = new ResultSet();
+         //     $resultSetPrototype->setArrayObjectPrototype(new Istilah());
+         //     // create a new pagination adapter object
+         //     $adapterHalaman = new DbSelect(
+         //         // our configured select object
+         //         $select,
+         //         // the adapter to run it against
+         //         $this->tableGateway->getAdapter(),
+         //         // the result set to hydrate
+         //         $resultSetPrototype
+         //     );
+         //     $paginator = new Paginator($adapterHalaman);
+         //     return $paginator;
+         // }
          $resultSet = $this->tableGateway->select();
          return $resultSet;
-    }
+     }
+
 
     public function getIstilah($id)
     {
@@ -68,6 +91,25 @@ class IstilahTable
         $selectString = $sql->buildSqlString($select);
         $statement = $sql->prepareStatementForSqlObject($select);
         return $statement->execute();
+ 
+         if ($halaman) {
+             // create a new Select object for the table album
+             $select = new Sql\Select('istilah');
+             // create a new result set based on the Album entity
+             $resultSetPrototype = new ResultSet();
+             $resultSetPrototype->setArrayObjectPrototype(new Istilah());
+             // create a new pagination adapter object
+             $adapterPerhalaman = new DbSelect(
+                 // our configured select object
+                 $select,
+                 // the adapter to run it against
+                 $this->tableGateway->getAdapter(),
+                 // the result set to hydrate
+                 $resultSetPrototype
+             );
+             $paginator = new Paginator($adapterPerhalaman);
+             return $paginator;
+         }
     }
 
      public function getBySearch($search)
@@ -82,9 +124,9 @@ class IstilahTable
         return $statement->execute();
     }
 
-    public function deleteIstilah($id)
+    public function hapusIstilah($id)
     {
-         $this->tableGateway->delete(array('id' => (int) $id));
+         $this->tableGateway->delete(array('id' => $id));
     }
 
     public function updateHit(Istilah $istilah)
