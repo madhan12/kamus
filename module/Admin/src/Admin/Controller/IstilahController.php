@@ -37,9 +37,7 @@ class IstilahController extends AbstractActionController
 
     public function hapusAction()
     {
-        
-
-          $id = (int) $this->params()->fromRoute('id', 0);
+        $id = (int) $this->params()->fromRoute('id', 0);
          if (!$id) {
              return $this->redirect()->toRoute('admin');
          }
@@ -52,6 +50,45 @@ class IstilahController extends AbstractActionController
              // Redirect to list of albums
         return $this->redirect()->toRoute('admin');
          
+    }
+
+    public function editAction()
+    {
+        
+        $id = $this->params()->fromRoute('id',0);
+        $istilah = $this->getIstilahTable()->getIstilah($id);
+        
+        $form = new IstilahForm();
+        // $form->bind($istilah);
+        $request = $this->getRequest();
+         // if ($request->isPost()) {
+         //     $istilah = new Istilah();
+         //     $form->setInputFilter($istilah->getInputFilter());
+         //     $form->setData($request->getPost());
+         //     if ($form->isValid()) {
+         //         $istilah->exchangeArray($form->getData());
+         //        $this->getIstilahTable()->saveIstilah($istilah);
+         //         // Redirect to list of albums
+         //        return $this->redirect()->toRoute('admin/istilah');
+         //     } 
+         // }
+
+         if ($request->isPost()) {
+            $form->setInputFilter($istilah->getInputFilter());
+             $form->setData($request->getPost());
+           
+             if ($form->isValid()) {
+                $istilah->exchangeArray($form->getData());
+                $this->getIstilahTable()->saveIstilah($istilah);
+                 // Redirect to list of albums
+                return $this->redirect()->toRoute('admin');
+             }
+         }
+
+        return array(
+             'id' => $id,
+             'istilah' => $istilah 
+         );
     }
 
     public function getIstilahTable()
