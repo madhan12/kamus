@@ -35,11 +35,6 @@ class IstilahController extends AbstractActionController
         return array('form' => $form);
     }
 
-    public function addAction()
-    {
-
-    }
-
     public function getIstilahTable()
     {
          if (!$this->istilahTable) {

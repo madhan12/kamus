@@ -16,6 +16,15 @@ class KomentarController extends AbstractActionController
         return new ViewModel();
     }
 
+    public function getKomentarTable()
+    {
+         if (!$this->komentarTable){
+             $sm = $this->getServiceLocator();
+             $this->komentaget('Kamus\Model\KmentarTable');
+         }
+         return $this->istilahTable;
+    }
+
 
 }
 

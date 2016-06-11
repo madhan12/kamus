@@ -7,6 +7,7 @@ use Zend\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {
+    protected $istilahTable;
 
     public function indexAction()
     {
@@ -20,6 +21,39 @@ class IndexController extends AbstractActionController
     	));
     	
     }
+
+    public function hapusAction()
+      {
+
+
+         $id = (int) $this->params()->fromRoute('id', 0);
+         if (!$id) {
+             return $this->redirect()->toRoute('admin');
+         }
+
+         $istilah = $this->getIstilahTable()->id_ada($id);
+         if (!$istilah) {
+
+            $adakesalahan = TRUE;
+             $pilihan = $request->getPost('hapus', 'Tidak');
+
+             if ($pilihan == 'Ya') {
+                 $id = (int) $request->getPost('id');
+                 $this->getServiceLocator()
+                      ->get('Kamus\Model\IstilahTable')
+                      ->hapusIstilah($id);
+             }
+
+             // Redirect to list of albums
+             return $this->redirect()->toRoute('admin');
+         }
+
+         return new ViewModel (array(
+             'id'    => $id,
+             'istilah' => $istilah,
+             'adakesalahan' => $adakesalahan,
+         ));
+     }
 
 
     public function getIstilahTable()
